@@ -1,0 +1,51 @@
+<div class="show-survey">
+	<div class="survey-title">
+		<%= @survey.name %>
+	</div>
+	current user: <%= current_user.id %>
+	<div class="survey-description">
+		<%= @survey.description %>
+	</div>
+	<div class="response-scale">
+		<div id="sep">----------------------------------------------------------------------</div>
+		<div id="title">
+			Response Scale:
+		</div>
+		<div id="scale">
+			<ul>
+				<% (0..@answer_count-1).each do |i| %>
+					<li><%= i+=1 %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div id="explanation">
+			<ul>
+				<li>Very Unlikely</li>
+				<li>Somewhat Unlikely</li>
+				<li>Very Likely</li>
+			</ul>
+		</div>
+		<div id="sep">----------------------------------------------------------------------</div>
+	</div>
+	<div class="actual-survey">
+		<table>
+			<%= form_tag url_for(:controller => 'surveys', :action => 'respond') do %>
+				<% @survey.questions.each do |q| %>
+					<%= render :partial => 'question_partial', :locals => { :q => q } %>
+				<% end %>
+		</table>
+		<div class="submit">
+			<%= submit_tag "Submit Survey", :class => "signin-page-submit" %>
+		</div>
+			<% end %>
+	</div>
+	<div class="end-links">
+		<p>
+			<% if current_user.id == @survey.user_id %>
+			<%= link_to "Edit", edit_survey_path(@survey) %> |
+			<%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
+			<% end %>	
+			<%= link_to "All Surveys", surveys_path %>
+		</p>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<% if current_user.surveys.empty? %>
+	<h1>No surveys to display</h1><br />
+	<% else %>
+		<table>
+		  <tr>
+		    <th>Name</th>
+		  <% for survey in @surveys %>
+		    <tr>
+		      <td><%= link_to survey.name, survey %></td>
+		      <td><%= link_to "Edit", edit_survey_path(survey) %></td>
+		      <td><%= link_to "Delete", survey, :method => :delete, :confirm => "Are you sure?",
+													  :title => "Delete #{survey.name}" %></td>
+		    </tr>
+		  <% end %>
+		  <% end %>
+		</table>
+
+<% if signed_in? and current_user.admin? or current_user.researcher? %>
+<p><%= link_to "New Survey", new_survey_path %></p>
+<% end %>
+<% if signed_in? and current_user.researcher? %>
+<p><%= link_to "New Survey", new_survey_path %></p>
+<% end %>

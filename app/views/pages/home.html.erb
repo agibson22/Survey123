@@ -1,0 +1,43 @@
+<% if signed_in? %>
+	<table class="front" summary="For signed-in users">
+    	<tr>
+      		<td class="main">
+        		<h1>Welcome to the NCSU Survey Application</h1>
+      		</td>
+      		<td class="sidebar round">
+        		<%= render 'shared/user_info' %>
+      		</td>
+    	</tr>
+  	</table>
+<% else %>
+	<h1>Welcome to the NCSU Survey Application</h1>
+	<div class="front-page-box">
+		<div class="register-box">
+			<h2>New User:</h2>
+			<div id="signup-button">
+				<%= link_to "Register", signup_path %>
+			</div>
+		</div>
+		<div class="signin-box">
+			<h2>Existing User Log In:</h2>
+			<div id="signin-button">
+				<%= form_for(:session, :url => sessions_path) do |f| %>
+					<div class="field">
+						<%= f.label :email, :class => "signin-label" %><br />
+						<%= f.text_field :email, :class => "signin-field" %>
+					</div>
+					<div class="field">
+						<%= f.label :password, :class => "signin-label" %><br />
+						<%= f.password_field :password, :class => "signin-field" %>
+					</div>
+					<div class="actions">
+						<%= f.submit "Sign In", :class => "signin-submit" %>
+					</div>
+					<div class="signin-forgot-pw">
+						<%= link_to "Forgot Password", new_password_reset_path %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% end %>

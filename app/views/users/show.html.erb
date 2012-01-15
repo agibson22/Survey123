@@ -1,0 +1,9 @@
+<div class="user-center">
+	<h1><%= @user.name %></h1>
+	<div class="user-information">
+		<p><b>Database User ID:</b> <%= @user.id %></p>
+		<p><b>User Unique ID (if applicable):</b> <%= @user.unique_id %></p>
+		<p><b>Number of Surveys:</b> <%= @user.surveys.count %></p>
+		<p><b>Admin User?</b> <%= @user.admin? %></p>
+	</div>
+</div>

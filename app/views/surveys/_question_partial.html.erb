@@ -1,0 +1,19 @@
+<% question_name = 'responses[]' + q.id.to_s + '[]' 
+responses = nil
+if params[:responses]
+  responses = params[:responses].first
+end
+%>
+
+	<tr>
+  		<td class="question-content">
+   			<%= q.content %>
+    	</td>
+    		<% q.answers.each do |a| %>
+		<td class="answer">
+      			<%= radio_button_tag question_name, a.id, false, :id => 'answer' + a.id.to_s %>
+      			<%= label_tag 'answer' + a.id.to_s, a.content %>
+				<%= hidden_field_tag :survey_id, @survey_id, :id => 'survey_id' %>
+     	</td>
+    <% end %>
+	</tr>

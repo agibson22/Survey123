@@ -1,0 +1,19 @@
+	<tr>
+		<td>
+			<%= link_to user.name, user %>
+		</td>
+			<% if current_user.admin? %>
+		<td>
+				<%= user.unique_id %>
+		</td>
+		<td>
+				<%= link_to "delete", user, :method => :delete, :confirm => "Are you sure?",
+											  :title => "Delete #{user.name}" %>
+		</td>
+		<td>
+				<%= link_to toggle_admin_link(user),
+							  toggle_admin_user_path(user),
+							  :confirm => "Are you sure?" %>
+		</td>
+			<% end %>
+	</tr>

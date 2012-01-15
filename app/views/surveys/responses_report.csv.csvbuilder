@@ -1,0 +1,10 @@
+csv << ["Respones"]
+csv << []
+
+csv << ["Survey ID", "Question ID", "Answer ID", "User ID"]
+
+row_data = []
+@responses.each do |response|
+	row_data = [response.created_at.to_s(:short)]
+	row_data << ""
+	row_data << 

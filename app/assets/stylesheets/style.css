@@ -1,0 +1,392 @@
+body {
+	background: red;
+  	font-family: Times;
+  	font-size: 1em;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+a img {
+  border: none;
+}
+
+body a {
+  	color: #0000FF;
+	text-decoration: none;
+}
+
+body a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+}
+
+#top-menu {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 900px;
+	height: 30px;
+	background: #eee;
+	padding: 10px 10px 0 10px;
+}
+
+#top-menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font: bold 1.1em Times;
+}
+
+#top-menu .underline-menu li {
+	display: inline;
+	margin-right: 20px;
+}
+
+#top-menu .underline-menu li a {
+	position: relative;
+	color: black;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-decoration: none;
+}
+
+#top-menu .underline-menu li a:hover {
+	border-bottom: 3px solid red;
+}
+
+#top-menu .underline-menu li a:hover:after{ /* use CSS generated content to add arrow to the menu */
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 50%;
+	margin-left: -4px; /* value should match border-width below */
+	bottom: 0;
+	border-width: 4px; /* value should match margin-left above */
+	border-style: solid;
+	border-color: transparent transparent red transparent; /* create up arrow */
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.container {
+  	width: 900px;
+  	margin: 0 auto;
+  	background: #eee;
+  	padding: 10px;
+}
+
+.content {
+	width: 900px;
+	height: 100%;
+	margin: auto;
+}
+
+.messages {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: white;
+	padding: 3px 0 3px 0;
+	border: solid 1px black;
+}
+
+.messages .notice {
+	margin-left: 20px;
+	font-size: 1.2em;
+	color: red;
+	text-decoration: underline;
+}
+
+.messages .error {
+	margin-left: 20px;
+	font-size: 1.2em;
+	color: red;
+	text-decoration: underline;
+}
+
+.messages .success {
+	margin-left: 20px;
+	font-size: 1.2em;
+	color: blue;
+}
+
+.front-page-box {
+	width: 420px;
+	height: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #fff;
+	border: solid 1px black;
+}
+
+.register-box {
+	width: 220px;
+	display: inline-block;
+	position: relative;
+	top: -120px;
+}
+
+.register-box h2 {
+	font-size: 1.1em;
+}
+
+.register-box #signup-button {
+	display: block;
+	text-align: center;
+	width: 120px;
+	background: #006400;
+	padding: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin-left: 5px;
+	cursor: default;
+}
+
+.register-box #signup-button a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: default;
+}
+
+.register-box #signup-button a:hover {
+	text-decoration: underline;
+	cursor: default;
+}
+
+.signin-box {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.signin-box h2 {
+	font-size: 1.1em;
+}
+
+#signin-button {
+	margin-left: 5px;
+}
+
+.signin-label {
+	color: #333;
+}
+
+.signin-field {
+	padding: 2px;
+}
+
+.signin-submit {
+	margin-top: 5px;
+	display: block;
+	text-align: center;
+	width: 120px;
+	background: #006400;
+	padding: 10px;
+	border: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin-left: 30px;
+	color: #fff;
+	font-size: 1em;
+	font-family: Times;
+	text-decoration: none;
+}
+
+.signin-submit:hover {
+	text-decoration: underline;
+}
+
+.signin-forgot-pw {
+	text-align: center;
+}
+
+.signin-page {
+	width: 300px;
+	height: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #fff;
+	border: solid 1px black;
+	text-align: center;
+}
+
+.signin-page-submit {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	width: 120px;
+	background: #006400;
+	padding: 10px;
+	border: 0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1em;
+	font-family: Times;
+	text-decoration: none;
+	margin-left: 88px;
+}
+
+.signin-page-submit:hover {
+	text-decoration: underline;
+}
+
+.user-center {
+	width: 300px;
+	height: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background: #fff;
+	border: solid 1px black;
+	text-align: center;
+}
+
+/* Surveys */
+.survey-title {
+	text-align: center;
+}
+
+.survey-description {
+	margin: 8px;
+}
+
+.response-scale {
+	text-align: center;
+	margin: 8px;
+}
+.response-scale #sep {
+	text-align: center;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.response-scale #title {
+	display: inline-block;
+	float: left;
+}
+
+.response-scale #scale {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.response-scale #scale ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+.response-scale #scale li {
+	display: inline;
+	margin-right: 40px;
+}
+
+.response-scale #explanation ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+.response-scale #explanation li {
+	display: inline;
+	margin-right: 35px;
+}
+
+.all-users {
+	
+}
+
+.all-users td {
+	padding-right: 20px;
+	border-right: solid 1px black;
+}
+
+/* Surveys */
+.survey-title {
+	text-align: center;
+}
+
+.survey-description {
+	margin: 8px;
+}
+
+.actual-survey table {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.actual-survey tr {
+	
+}
+
+.actual-survey .question-content {
+	font-weight: bold;
+}
+
+.actual-survey .question-content td {
+	width: 400px;
+}
+
+.actual-survey .answer {
+	
+}
+
+.actual-survey .answer td {
+	text-align: center;
+}
+.pab-stem {
+	font-weight: bold;
+	text-align: left;
+}
+
+.pab-question {
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 15px;
+	width: 400px;
+	float: left;
+	line-height: 15px;
+	height: 15px;
+}
+
+.pab-answer {
+	width: 300px;
+	line-height: 15px;
+	height: 15px;
+}
+
+.pab-answer ul {
+	list-style-type: none;
+	display: inline;
+}
+
+.pab-answer li {
+	margin-right: 5px;
+	display: inline;
+}

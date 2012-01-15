@@ -1,0 +1,28 @@
+<h1>All Users</h1>
+
+<%= will_paginate %>
+
+<table class="all-users">
+	<tr>
+		<td>
+			Name
+		</td>
+			<% if current_user.admin? %>
+		<td>
+				User Unique ID Number
+		</td>
+		<td>
+				Delete The User
+		</td>
+		<td>
+				Toggle Administrator Status
+		</td>
+			<% end %>
+	<%= render @users %>
+</table>
+
+<%= will_paginate %>
+
+<% if signed_in? and current_user.admin? %>
+<p><%= link_to "Add New User", 'create-user' %></p>
+<% end %>
