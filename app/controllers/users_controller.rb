@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
-      UserMailer.registration_confirmation(@user).deliver
+      #UserMailer.registration_confirmation(@user).deliver
     else
       flash[:notice] = "User Not Created"
       @title = "Sign up"
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "User Successfully Added"
-      UserMailer.admin_create_user_email(@user).deliver
+      #UserMailer.admin_create_user_email(@user).deliver
       redirect_to '/create-user'
     else
       @title = "Add New User"
