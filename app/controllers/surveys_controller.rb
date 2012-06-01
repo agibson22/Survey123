@@ -62,6 +62,7 @@ class SurveysController < ApplicationController
   
   def responses
     @survey = Survey.find(params[:id])
+    @responses = Response.find_all_by_survey_id(@survey.id)
   end
   
   def respond

@@ -2,6 +2,7 @@ Survey123::Application.routes.draw do
   get "password_resets/new"
   
   resources :surveys
+  match 'surveys/:id/responses', :controller => 'surveys', :action => 'responses', :as => 'survey_responses'
   match '/respond', :controller => 'surveys', :action => 'respond'
   
   resources :pabs
@@ -26,7 +27,7 @@ Survey123::Application.routes.draw do
   match '/help', :to => 'pages#help'
   match '/create-user', :to => 'users#create-user'
   match '/my-surveys', :to => 'surveys#my_surveys'
-  match '/responses', :to => 'surveys#responses'
+  #match '/responses', :to => 'surveys#responses'
   
   root :to => "pages#home"
 end

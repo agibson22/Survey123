@@ -1,0 +1,51 @@
+<h1>Survey Responses</h1>
+<br />
+<br />
+<table width="100%" border="1" cellpadding="4" cellspacing="4">
+	<th>
+		Response ID
+	</th>
+	<th>
+		User ID
+	</th>
+	<th>
+		Created Time
+	</th>
+	<th>
+		Question ID
+	</th>
+	<th>
+		Answer ID
+	</th>
+	<th>
+		Survey ID
+	</th>
+	<th>
+		Stem ID
+	</th>
+<% for response in @responses %>
+	<tr>
+		<td>
+			<%= response.id %>
+		</td>
+		<td>
+			<%= response.user_id %>
+		</td>
+		<td>
+			<%= response.created_at %>
+		</td>
+		<td>
+			<%= response.question_id %>
+		</td>
+		<td>
+			<%= response.answer_id %>
+		</td>
+		<td>
+			<%= response.survey_id %>
+		</td>
+		<td>
+			<%= response.stem_id %>
+		</td>
+	</tr>
+<% end %>
+</table>

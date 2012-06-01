@@ -137,10 +137,9 @@ h1 {
 }
 
 .register-box {
-	width: 220px;
 	display: inline-block;
-	position: relative;
-	top: -120px;
+	float: left;
+	text-align: center;
 }
 
 .register-box h2 {
@@ -176,7 +175,8 @@ h1 {
 
 .signin-box {
 	display: inline-block;
-	margin-top: 10px;
+	float: right;
+	text-align: center;
 }
 
 .signin-box h2 {
@@ -206,7 +206,7 @@ h1 {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-	margin-left: 30px;
+	margin-left: 50px;
 	color: #fff;
 	font-size: 1em;
 	font-family: Times;
